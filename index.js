@@ -9,7 +9,8 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.set('strictQuery',true);
-mongoose.connect("mongodb+srv://Daniel:x0bibVDBuXbYKHMW@crud.djl7kxl.mongodb.net/?retryWrites=true&w=majority").catch((err) => console.log(err)).then((con)=> console.log(con))
+mongoose.connect(process.env.REACT_URL);
+//.catch((err) => console.log(err)).then((con)=> console.log(con))
 
 app.post("/insert",async(req,res)=>{
     const task=req.body.Task;

@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.set('strictQuery',true);
-mongoose.connect(process.env.REACT_URL);
+mongoose.connect(process.env.MONGODB_URL);
 //.catch((err) => console.log(err)).then((con)=> console.log(con))
 
 app.post("/insert",async(req,res)=>{
